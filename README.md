@@ -30,4 +30,5 @@ For Installing plugin for grafana:
 
 $ sudo grafana-cli plugins install grafana-polystat-panel
 
+$ grafana-cli plugins install grafana-clock-panel
 
