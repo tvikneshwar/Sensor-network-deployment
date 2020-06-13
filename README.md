@@ -26,5 +26,8 @@ localhost:3000
 admin
 vikytnk511
 
+For Installing plugin for grafana:
+
+$ sudo grafana-cli plugins install grafana-polystat-panel
 
 
