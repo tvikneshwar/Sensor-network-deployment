@@ -62,9 +62,12 @@ MetaBrad
 Jun '18
 It took me a while to sort out the correct installation procedure for the entire TICK stack. The documentation for each component was not consistent. Can’t remember which, but one of them offered a nice sequence for auto-detecting and auto-selecting the right package. The summary steps are similar to @noahcrowley, but figures out the correct OS for you and lends itself to copy-paste:
 .......................................................................................................................
-
+ For setting user account and commands
+ #####################################
 Read also : https://docs.influxdata.com/influxdb/v1.5/query_language/authentication_and_authorization/
-for setting user account
+            http://blog.centurio.net/2018/10/28/howto-install-influxdb-and-grafana-on-a-raspberry-pi-3/
+            
+
 
 
 
