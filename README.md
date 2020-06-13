@@ -32,3 +32,48 @@ $ sudo grafana-cli plugins install grafana-polystat-panel
 
 $ grafana-cli plugins install grafana-clock-panel
 
+************************************************************************************************************************************
+
+Influx db installation
+######################
+
+
+Refrence link: https://community.influxdata.com/t/raspberry-pi-installation-instructions/5515/6
+
+
+
+curl -sL https://repos.influxdata.com/influxdb.key | sudo apt-key add - 
+source /etc/os-release
+test $VERSION_ID = "7" && echo "deb https://repos.influxdata.com/debian wheezy stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
+test $VERSION_ID = "8" && echo "deb https://repos.influxdata.com/debian jessie stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
+test $VERSION_ID = "9" && echo "deb https://repos.influxdata.com/debian stretch stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
+
+sudo apt-get update && sudo apt-get install influxdb
+sudo systemctl start influxdb
+
+
+.......................................................
+MetaBrad
+Jun '18
+It took me a while to sort out the correct installation procedure for the entire TICK stack. The documentation for each component was not consistent. Can’t remember which, but one of them offered a nice sequence for auto-detecting and auto-selecting the right package. The summary steps are similar to @noahcrowley, but figures out the correct OS for you and lends itself to copy-paste:
+.......................................................................................................................
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
