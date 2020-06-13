@@ -10,8 +10,11 @@ For Raspberry pi 2, and Raspberry Pi 3, 3B, 3B+, use:
   $ sudo apt-get install grafana
   
    Start the server (init.d service)
-   
+    $ sudo systemctl enable grafana-server 
    $ sudo service grafana-server start
+  
+ 
+
    
    
    This will start the grafana-server process as the grafana user, which was created during the package installation. The default HTTP port is 3000 and default user and group is admin.
@@ -49,8 +52,10 @@ test $VERSION_ID = "8" && echo "deb https://repos.influxdata.com/debian jessie s
 test $VERSION_ID = "9" && echo "deb https://repos.influxdata.com/debian stretch stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
 
 sudo apt-get update && sudo apt-get install influxdb
-sudo systemctl start influxdb
 
+sudo systemctl enable influxdb
+ 
+sudo systemctl start influxdb
 
 .......................................................
 MetaBrad
@@ -58,7 +63,8 @@ Jun '18
 It took me a while to sort out the correct installation procedure for the entire TICK stack. The documentation for each component was not consistent. Can’t remember which, but one of them offered a nice sequence for auto-detecting and auto-selecting the right package. The summary steps are similar to @noahcrowley, but figures out the correct OS for you and lends itself to copy-paste:
 .......................................................................................................................
 
-
+Read also : https://docs.influxdata.com/influxdb/v1.5/query_language/authentication_and_authorization/
+for setting user account
 
 
 
