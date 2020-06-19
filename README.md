@@ -69,7 +69,12 @@ Read also : https://docs.influxdata.com/influxdb/v1.5/query_language/authenticat
             
 
 
+AGRI Stick:
+###########
 
+https://www.instructables.com/id/Agri-Stick/
+
+sensor----rasp(loragw)------mqtt
 
 
 
