@@ -82,7 +82,12 @@ check this:
 https://github.com/raspberrypi-tw/lora-sx1276
 
 
+important link: $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
+https://github.com/tvikneshwar/lora_to_lora_mqtt_iot_cloud
+
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 
 
