@@ -98,6 +98,17 @@ https://github.com/YandievRuslan/sx1278-LoRa-RaspberryPi
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 
+Esp32 installation in arduino ide
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+https://circuits4you.com/2018/02/02/installing-esp32-board-in-arduino-ide-on-ubuntu-linux/
+
+Lora interface with esp32:
+
+https://randomnerdtutorials.com/esp32-lora-rfm95-transceiver-arduino-ide/
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 
 
