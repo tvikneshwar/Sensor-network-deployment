@@ -114,7 +114,13 @@ https://github.com/sandeepmistry/node-sx127x/blob/master/API.md#create-device
 https://www.takaitra.com/spi-device-raspberry-pi/
 
 
+very  important:
+****************
 
+https://github.com/Inteform/PyLora
+
+
+###########################################################################
 
 
 
