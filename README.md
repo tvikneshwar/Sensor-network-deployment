@@ -109,7 +109,9 @@ https://randomnerdtutorials.com/esp32-lora-rfm95-transceiver-arduino-ide/
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+https://github.com/sandeepmistry/node-sx127x/blob/master/API.md#create-device
 
+https://www.takaitra.com/spi-device-raspberry-pi/
 
 
 
