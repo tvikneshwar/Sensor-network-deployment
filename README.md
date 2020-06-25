@@ -124,5 +124,5 @@ https://github.com/Inteform/PyLora
 ###########################################################################
 https://www.seeedstudio.com/blog/2019/11/18/lora-and-lorawan-for-arduino-and-raspberry-pi/
 
-
+https://medium.com/@sajinalex2011/basic-lora-to-lora-messaging-using-raspberry-pi-3b-tutorial-12db2ce8028b
 
