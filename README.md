@@ -33,6 +33,7 @@ For Installing plugin for grafana:
 
 $ sudo grafana-cli plugins install grafana-polystat-panel
 
+
 $ grafana-cli plugins install grafana-clock-panel
 
 ************************************************************************************************************************************
@@ -121,7 +122,7 @@ https://github.com/Inteform/PyLora
 
 
 ###########################################################################
-
+https://www.seeedstudio.com/blog/2019/11/18/lora-and-lorawan-for-arduino-and-raspberry-pi/
 
 
 
