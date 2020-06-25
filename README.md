@@ -127,3 +127,12 @@ https://www.seeedstudio.com/blog/2019/11/18/lora-and-lorawan-for-arduino-and-ras
 https://medium.com/@sajinalex2011/basic-lora-to-lora-messaging-using-raspberry-pi-3b-tutorial-12db2ce8028b
 
 https://www.deviceplus.com/raspberry-pi/how-to-run-arduino-sketches-on-raspberry-pi/4/
+
+
+
+very important:
+~~~~~~~~~~~~~~~
+
+https://github.com/mayeranalytics/pySX127x
+
+
