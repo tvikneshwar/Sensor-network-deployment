@@ -98,7 +98,6 @@ https://github.com/YandievRuslan/sx1278-LoRa-RaspberryPi
 
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
-
 Esp32 installation in arduino ide
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -109,17 +108,13 @@ Lora interface with esp32:
 https://randomnerdtutorials.com/esp32-lora-rfm95-transceiver-arduino-ide/
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 https://github.com/sandeepmistry/node-sx127x/blob/master/API.md#create-device
 
 https://www.takaitra.com/spi-device-raspberry-pi/
 
-
 very  important:
 ****************
-
 https://github.com/Inteform/PyLora
-
 
 ###########################################################################
 https://www.seeedstudio.com/blog/2019/11/18/lora-and-lorawan-for-arduino-and-raspberry-pi/
@@ -128,11 +123,13 @@ https://medium.com/@sajinalex2011/basic-lora-to-lora-messaging-using-raspberry-p
 
 https://www.deviceplus.com/raspberry-pi/how-to-run-arduino-sketches-on-raspberry-pi/4/
 
-
-
 very important:
 ~~~~~~~~~~~~~~~
-
 https://github.com/mayeranalytics/pySX127x
+
+
+
+
+
 
 
