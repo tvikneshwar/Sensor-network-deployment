@@ -127,6 +127,11 @@ very important:
 ~~~~~~~~~~~~~~~
 https://github.com/mayeranalytics/pySX127x
 
+Nodered-serialport sensor data read
+************************************
+
+https://iotdesignpro.com/projects/interface-arduino-with-node-red-to-send-sensor-data-on-webpage
+
 
 
 
