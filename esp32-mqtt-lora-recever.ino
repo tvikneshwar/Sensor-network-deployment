@@ -1,7 +1,5 @@
 /*********
-  Modified from the examples of the Arduino LoRa library
-  More resources: https://randomnerdtutorials.com
-
+  Vikneshwar Thandeswaran
 
   Esp32 -lora recever mqtt
 *********/
