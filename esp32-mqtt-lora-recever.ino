@@ -1,5 +1,7 @@
 /*********
-  Vikneshwar Thandeswaran
+  Modified from the examples of the Arduino LoRa library
+  More resources: https://randomnerdtutorials.com
+
 
   Esp32 -lora recever mqtt
 *********/
@@ -14,9 +16,9 @@
 #define dio0 2
 
 // Replace the next variables with your SSID/Password combination
-const char* ssid = "REPLACE_WITH_YOUR_SSID";
-const char* password = "REPLACE_WITH_YOUR_PASSWORD";
-const char* mqtt_server = "test.mosquitto.org";
+const char* ssid = "chellam";
+const char* password = "chell555";
+const char* mqtt_server = "broker.hivemq.com";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -26,7 +28,7 @@ int value = 0;
 
 
 // LED Pin
-const int ledPin = 4;
+const int ledPin = 2;
 
 void setup() {
   //initialize Serial Monitor
@@ -110,6 +112,7 @@ void reconnect() {
     // Attempt to connect
     if (client.connect("ESP8266Client")) {
       Serial.println("connected");
+      client.publish("outTopic-viky1", "CONNECTED-VIKY");
       // Subscribe
       client.subscribe("esp32/output");
     } else {
@@ -150,5 +153,6 @@ ESP.restart();
     // print RSSI of packet
     Serial.print("' with RSSI ");
     Serial.println(LoRa.packetRssi());
+    client.publish("outTopic-viky", "hi-viky");
   }
 }
