@@ -1,45 +1,59 @@
 /*********
-  Modified from the examples of the Arduino LoRa library
-  More resources: https://randomnerdtutorials.com
-
-
-  Esp32 -lora recever mqtt
+  vikneshwar Thandeswaran
 *********/
-#include <WiFi.h>
-#include <PubSubClient.h>
+
 #include <SPI.h>
 #include <LoRa.h>
+#include <WiFi.h>
+#include <PubSubClient.h>
 
 //define the pins used by the transceiver module
 #define ss 5
 #define rst 14
 #define dio0 2
 
-// Replace the next variables with your SSID/Password combination
+
 const char* ssid = "chellam";
-const char* password = "chell555";
-const char* mqtt_server = "broker.hivemq.com";
+const char* password =  "chell555";
+const char* mqttServer = "mqtt.eclipse.org";
+const int mqttPort = 1883;
+const char* mqttUser = "yourMQTTuser";
+const char* mqttPassword = "yourMQTTpassword";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
-long lastMsg = 0;
-char msg[50];
-int value = 0;
-
-
-// LED Pin
-const int ledPin = 2;
 
 void setup() {
   //initialize Serial Monitor
   Serial.begin(115200);
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.println("Connecting to WiFi..");
+  }
+
+   Serial.println("Connected to the WiFi network");
+ 
+  client.setServer(mqttServer, mqttPort);
+  while (!client.connected()) {
+    Serial.println("Connecting to MQTT...");
+ 
+    if (client.connect("ESP32Client", mqttUser, mqttPassword )) {
+ 
+      Serial.println("connected");
+ 
+    } else {
+ 
+      Serial.print("failed with state ");
+      Serial.print(client.state());
+      delay(2000);
+ 
+    }
+  }
+ client.publish("esp/test", "Hello from ESP32");
+ 
   while (!Serial);
   Serial.println("LoRa Receiver");
-  setup_wifi();
-  client.setServer(mqtt_server, 1883);
-  client.setCallback(callback);
-
-  pinMode(ledPin, OUTPUT);
 
   //setup LoRa transceiver module
   LoRa.setPins(ss, rst, dio0);
@@ -48,7 +62,8 @@ void setup() {
   //433E6 for Asia
   //866E6 for Europe
   //915E6 for North America
-  while (!LoRa.begin(866E6)) {
+  while (!LoRa.begin(433E6)) {
+    client.publish("esp/lora", ".");
     Serial.println(".");
     delay(500);
   }
@@ -57,102 +72,27 @@ void setup() {
   // ranges from 0-0xFF
   LoRa.setSyncWord(0xF3);
   Serial.println("LoRa Initializing OK!");
+  client.publish("esp/lora", "LoRa Initializing OK!");
 }
-void setup_wifi() {
-  delay(10);
-  // We start by connecting to a WiFi network
-  Serial.println();
-  Serial.print("Connecting to ");
-  Serial.println(ssid);
-
-  WiFi.begin(ssid, password);
-
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-  }
-Serial.println("");
-  Serial.println("WiFi connected");
-  Serial.println("IP address: ");
-  Serial.println(WiFi.localIP());
-}
-void callback(char* topic, byte* message, unsigned int length) {
-  Serial.print("Message arrived on topic: ");
-  Serial.print(topic);
-  Serial.print(". Message: ");
-  String messageTemp;
-  
-  for (int i = 0; i < length; i++) {
-    Serial.print((char)message[i]);
-    messageTemp += (char)message[i];
-  }
-  Serial.println();
-
-  // Feel free to add more if statements to control more GPIOs with MQTT
-
-  // If a message is received on the topic esp32/output, you check if the message is either "on" or "off". 
-  // Changes the output state according to the message
-  if (String(topic) == "esp32/output") {
-    Serial.print("Changing output to ");
-    if(messageTemp == "on"){
-      Serial.println("on");
-      digitalWrite(ledPin, HIGH);
-    }
-    else if(messageTemp == "off"){
-      Serial.println("off");
-      digitalWrite(ledPin, LOW);
-    }
-  }
-}
-
-void reconnect() {
-  // Loop until we're reconnected
-  while (!client.connected()) {
-    Serial.print("Attempting MQTT connection...");
-    // Attempt to connect
-    if (client.connect("ESP8266Client")) {
-      Serial.println("connected");
-      client.publish("outTopic-viky1", "CONNECTED-VIKY");
-      // Subscribe
-      client.subscribe("esp32/output");
-    } else {
-      Serial.print("failed, rc=");
-      Serial.print(client.state());
-      Serial.println(" try again in 5 seconds");
-      // Wait 5 seconds before retrying
-      delay(5000);
-    }
-  }
-}
-
-
 
 void loop() {
-   if (WiFi.status() != WL_CONNECTED){
-Serial.println("Resetting");
-delay (5000);
-ESP.restart();
-}
   // try to parse packet
   int packetSize = LoRa.parsePacket();
   if (packetSize) {
     // received a packet
     Serial.print("Received packet '");
-
+    client.publish("esp/lora", "Received packet '");
     // read packet
     while (LoRa.available()) {
-      
-      String LoRaData = LoRa.readString();
-      int str_len = LoRaData.length() + 1; 
-      Serial.print(LoRaData); 
-      
-       client.publish("esp32/humidity",(char*) LoRaData.c_str());
+      String  LoRaData = LoRa.readString();
+      const char *msg = LoRaData.c_str();
+      Serial.print(msg); 
+      client.publish("esp/lora", msg);
       
     }
 
     // print RSSI of packet
     Serial.print("' with RSSI ");
     Serial.println(LoRa.packetRssi());
-    client.publish("outTopic-viky", "hi-viky");
   }
 }
