@@ -144,7 +144,8 @@ Serial Read:
 https://pyserial.readthedocs.io/en/latest/shortintro.html
 https://stackoverflow.com/questions/16077912/python-serial-how-to-use-the-read-or-readline-function-to-read-more-than-1-char
 
-
+Read with Thread:
+https://www.semicolonworld.com/question/55248/pyserial-non-blocking-read-loop
 
 
 
