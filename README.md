@@ -147,6 +147,6 @@ https://stackoverflow.com/questions/16077912/python-serial-how-to-use-the-read-o
 Read with Thread:
 https://www.semicolonworld.com/question/55248/pyserial-non-blocking-read-loop
 
-
+https://stackoverflow.com/questions/17553543/pyserial-non-blocking-read-loop
 
 
