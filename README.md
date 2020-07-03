@@ -132,6 +132,16 @@ Nodered-serialport sensor data read
 
 https://iotdesignpro.com/projects/interface-arduino-with-node-red-to-send-sensor-data-on-webpage
 
+***************************************************************************************************************************************************
+
+Serialport to mqtt Python
+
+https://github.com/eclipse/paho.mqtt.python/tree/master/examples
+
+
+Serial Read:
+
+https://stackoverflow.com/questions/16077912/python-serial-how-to-use-the-read-or-readline-function-to-read-more-than-1-char
 
 
 
