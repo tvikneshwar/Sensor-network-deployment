@@ -43,16 +43,16 @@ void loop() {
   // range value:
   switch (range) {
  case 0:    // Sensor getting wet
-    Serial.println("Flood");
-    LoRa.print("Flood");
+    //Serial.println("Flood");
+    LoRa.print("30a");
     break;
  case 1:    // Sensor getting wet
-    Serial.println("Rain Warning");
-    LoRa.print("Rain Warning");
+    //Serial.println("Rain Warning");
+    LoRa.print("200b");
     break;
  case 2:    // Sensor dry - To shut this up delete the " Serial.println("Not Raining"); " below.
-    Serial.println("Not Raining");
-    LoRa.print("Not Raining");
+    //Serial.println("Not Raining");
+    LoRa.print("100c");
     break;
   }
   
@@ -60,4 +60,3 @@ void loop() {
   delay(9000);
   
 }
-
