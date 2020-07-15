@@ -25,7 +25,7 @@ PubSubClient client(espClient);
 
 void setup() {
   //initialize Serial Monitor
-  Serial.begin(115200);
+  Serial.begin(9600);
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
@@ -63,16 +63,17 @@ void setup() {
   //866E6 for Europe
   //915E6 for North America
   while (!LoRa.begin(433E6)) {
-    client.publish("esp/lora", ".");
-    Serial.println(".");
+   // client.publish("esp/lora", ".");
+    //Serial.println(".");
     delay(500);
   }
    // Change sync word (0xF3) to match the receiver
   // The sync word assures you don't get LoRa messages from other LoRa transceivers
   // ranges from 0-0xFF
   LoRa.setSyncWord(0xF3);
+  
+  client.publish("esp/lora", "LoRa OK!");
   Serial.println("LoRa Initializing OK!");
-  client.publish("esp/lora", "LoRa Initializing OK!");
 }
 
 void loop() {
@@ -80,19 +81,21 @@ void loop() {
   int packetSize = LoRa.parsePacket();
   if (packetSize) {
     // received a packet
+    
+    client.publish("esp/lora", "Rp '");
     Serial.print("Received packet '");
-    client.publish("esp/lora", "Received packet '");
     // read packet
     while (LoRa.available()) {
       String  LoRaData = LoRa.readString();
       const char *msg = LoRaData.c_str();
-      Serial.print(msg); 
+      
       client.publish("esp/lora", msg);
+      Serial.print(msg); 
       
     }
 
     // print RSSI of packet
-    Serial.print("' with RSSI ");
-    Serial.println(LoRa.packetRssi());
+    //Serial.print("' with RSSI ");
+   // Serial.println(LoRa.packetRssi());
   }
 }
