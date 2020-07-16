@@ -29,10 +29,6 @@ void loop() {
   Serial.print("Sending packet: ");
   
   
-  
-
-
-  
   //Serial.println(counter);
   // read the sensor on analog A0:
   int sensorReading = analogRead(A0);
@@ -52,6 +48,15 @@ void loop() {
  
   VAL.add(sensorReading);
 
+  char JSONmessageBuffer[100];
+  JSONencoder.printTo(JSONmessageBuffer, sizeof(JSONmessageBuffer));
+  
+  
+  LoRa.print(JSONmessageBuffer);
+ // Serial.println("Sending message to MQTT topic..");
+  Serial.println(JSONmessageBuffer);
+  
+  
   /*
   // range value:
   switch (range) {
