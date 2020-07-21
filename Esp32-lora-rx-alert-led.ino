@@ -51,6 +51,20 @@ void loop() {
     
     
     }   
+       if(LoRaData == "200b")
+  {
+    Serial.print("Rain Warning"); 
+    digitalWrite(22, LOW);//R1 on 
+    
+    
+    }   
+      if(LoRaData == "100c")
+  {
+    Serial.print("N0 Warning"); 
+    digitalWrite(22, LOW);//R1 on 
+    
+    
+    }   
     
   delay (5000);
   
