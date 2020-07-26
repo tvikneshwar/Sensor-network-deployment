@@ -38,7 +38,7 @@ void loop() {
     // send packet
     sensorReading += '\n';
   LoRa.beginPacket();
-  LoRa.print(sensorReading);
+  //LoRa.print(sensorReading);
   StaticJsonBuffer<300> JSONbuffer;
   JsonObject& JSONencoder = JSONbuffer.createObject();
 
