@@ -44,18 +44,18 @@ void loop() {
   // range value:
   switch (range) {
  case 0:    // Sensor getting wet
-    //Serial.println("Flood");
+    Serial.println("Flood30");
     LoRa.print("30\n");
     digitalWrite(LED_BUILTIN, HIGH);
     break;
  case 1:    // Sensor getting wet
-    //Serial.println("Rain Warning");
-    LoRa.print("200\n");
+    Serial.println("Rain Warning20");
+    LoRa.print("20\n");
     digitalWrite(LED_BUILTIN, LOW);              
     break;
  case 2:    // Sensor dry - To shut this up delete the " Serial.println("Not Raining"); " below.
-    //Serial.println("Not Raining");
-    LoRa.print("100\n");
+    Serial.println("Not Raining10");
+    LoRa.print("10\n");
     digitalWrite(LED_BUILTIN, LOW);
     break;
   }
