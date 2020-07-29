@@ -39,20 +39,20 @@ void loop() {
   int range = map(sensorReading, sensorMin, sensorMax, 0, 3);
     // send packet
   LoRa.beginPacket();
-  LoRa.print(sensorReading);
+  //LoRa.print(sensorReading);
   // range value:
   switch (range) {
  case 0:    // Sensor getting wet
     //Serial.println("Flood");
-    LoRa.print("30a");
+    LoRa.print("30");
     break;
  case 1:    // Sensor getting wet
     //Serial.println("Rain Warning");
-    LoRa.print("200b");
+    LoRa.print("200");
     break;
  case 2:    // Sensor dry - To shut this up delete the " Serial.println("Not Raining"); " below.
     //Serial.println("Not Raining");
-    LoRa.print("100c");
+    LoRa.print("100");
     break;
   }
   
