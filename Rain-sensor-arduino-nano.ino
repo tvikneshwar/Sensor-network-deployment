@@ -51,10 +51,12 @@ void loop() {
  case 1:    // Sensor getting wet
     //Serial.println("Rain Warning");
     LoRa.print("200\n");
+    digitalWrite(LED_BUILTIN, LOW);              
     break;
  case 2:    // Sensor dry - To shut this up delete the " Serial.println("Not Raining"); " below.
     //Serial.println("Not Raining");
     LoRa.print("100\n");
+    digitalWrite(LED_BUILTIN, LOW);
     break;
   }
   
