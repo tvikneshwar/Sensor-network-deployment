@@ -22,6 +22,7 @@ void setup() {
   while (!Serial);
 
   Serial.println("LoRa Sender");
+  pinMode(LED_BUILTIN, OUTPUT);
 
   if (!LoRa.begin(433E6)) {
     Serial.println("Starting LoRa failed!");
@@ -44,15 +45,16 @@ void loop() {
   switch (range) {
  case 0:    // Sensor getting wet
     //Serial.println("Flood");
-    LoRa.print("30");
+    LoRa.print("30\n");
+    digitalWrite(LED_BUILTIN, HIGH);
     break;
  case 1:    // Sensor getting wet
     //Serial.println("Rain Warning");
-    LoRa.print("200");
+    LoRa.print("200\n");
     break;
  case 2:    // Sensor dry - To shut this up delete the " Serial.println("Not Raining"); " below.
     //Serial.println("Not Raining");
-    LoRa.print("100");
+    LoRa.print("100\n");
     break;
   }
   
