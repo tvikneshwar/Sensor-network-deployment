@@ -16,13 +16,14 @@ A0.................................. Analog in 0
 
 const int sensorMin = 0;     // sensor minimum
 const int sensorMax = 1024;  // sensor maximum
+int led = 13;
 
 void setup() {
   Serial.begin(9600);
   while (!Serial);
 
   Serial.println("LoRa Sender");
-  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(led, OUTPUT);
 
   if (!LoRa.begin(433E6)) {
     Serial.println("Starting LoRa failed!");
@@ -46,17 +47,17 @@ void loop() {
  case 0:    // Sensor getting wet
     Serial.println("Flood30");
     LoRa.print("30\n");
-    digitalWrite(LED_BUILTIN, HIGH);
+    digitalWrite(led, HIGH);
     break;
  case 1:    // Sensor getting wet
     Serial.println("Rain Warning20");
     LoRa.print("20\n");
-    digitalWrite(LED_BUILTIN, HIGH);             
+    digitalWrite(led, HIGH);             
     break;
  case 2:    // Sensor dry - To shut this up delete the " Serial.println("Not Raining"); " below.
     Serial.println("Not Raining10");
     LoRa.print("10\n");
-    digitalWrite(LED_BUILTIN, LOW);
+    digitalWrite(led, LOW);
     break;
   }
   
