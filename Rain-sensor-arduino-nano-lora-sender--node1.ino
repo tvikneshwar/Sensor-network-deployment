@@ -47,17 +47,17 @@ void loop() {
  case 0:    // Sensor getting wet
     Serial.println("Flood30");
     LoRa.print("nod01#30\n");
-    digitalWrite(led, HIGH);
+     digitalWrite(led, LOW);      //Turn on Buzzer       gpio logic is ulta
     break;
  case 1:    // Sensor getting wet
     Serial.println("Rain Warning20");
     LoRa.print("nod01#20\n");
-    digitalWrite(led, HIGH);             
+     digitalWrite(led, LOW);      //Turn on Buzzer       gpio logic is ulta             
     break;
  case 2:    // Sensor dry - To shut this up delete the " Serial.println("Not Raining"); " below.
     Serial.println("Not Raining10");
     LoRa.print("nod01#10\n");
-    digitalWrite(led, LOW);
+     digitalWrite(led, HIGH);      //Turn off Buzzer       gpio logic is ulta
     break;
   }
   
