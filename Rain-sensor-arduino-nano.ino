@@ -16,7 +16,7 @@ A0.................................. Analog in 0
 
 const int sensorMin = 0;     // sensor minimum
 const int sensorMax = 1024;  // sensor maximum
-int led = 13;
+int led = 2;                 // Digital pin D5
 
 void setup() {
   Serial.begin(9600);
@@ -46,17 +46,17 @@ void loop() {
   switch (range) {
  case 0:    // Sensor getting wet
     Serial.println("Flood30");
-    LoRa.print("30\n");
+    LoRa.print("nod01#30\n");
     digitalWrite(led, HIGH);
     break;
  case 1:    // Sensor getting wet
     Serial.println("Rain Warning20");
-    LoRa.print("20\n");
+    LoRa.print("nod01#20\n");
     digitalWrite(led, HIGH);             
     break;
  case 2:    // Sensor dry - To shut this up delete the " Serial.println("Not Raining"); " below.
     Serial.println("Not Raining10");
-    LoRa.print("10\n");
+    LoRa.print("nod01#10\n");
     digitalWrite(led, LOW);
     break;
   }
