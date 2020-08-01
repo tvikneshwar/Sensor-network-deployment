@@ -16,7 +16,7 @@ A0.................................. Analog in 0
 
 const int sensorMin = 0;     // sensor minimum
 const int sensorMax = 1024;  // sensor maximum
-int led = 2;                 // Digital pin D5
+int led = 3;                 // Digital pin D3
 
 void setup() {
   Serial.begin(9600);
