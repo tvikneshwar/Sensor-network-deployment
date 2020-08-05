@@ -52,27 +52,27 @@ void loop() {
   int packetSize = LoRa.parsePacket();
   if (packetSize) {
     // received a packet
-    Serial.print("Received packet '");
+    //Serial.print("Received packet '");
 
     // read packet
     while (LoRa.available()) {
       String LoRaData = LoRa.readString();
-      Serial.print(LoRaData); 
+     // Serial.print(LoRaData); 
 //###################################################      
       //***Alert***
-  if(LoRaData == "nod01#30")
+  if(LoRaData == "nod01#30\n")
   {
     Serial.print("Node1 Leakage detected"); 
     digitalWrite(34, HIGH);//Buzzer on GPIO34 
     
     }   
-    if(LoRaData == "nod01#20")
+    if(LoRaData == "nod01#20\n")
   {
     Serial.print("Node1 Leakage detected"); 
     digitalWrite(34, HIGH);//Buzzer on GPIO34 
     
     } 
-    if(LoRaData == "nod01#10")
+    if(LoRaData == "nod01#10\n")
   {
     Serial.print("Node1 No Leakage detected"); 
     digitalWrite(34, LOW);//Buzzer on GPIO34 
