@@ -1,4 +1,3 @@
-
 /* G.chellavel 09/10/2020 */
 
 #include <SoftwareSerial.h>
@@ -36,7 +35,7 @@ void loop()
   
   mySerial.println("AT+CMGS=\"+6592424149\"\r");  // Replace with phone number. 
   
-  String message= WindmillID + messagetext + sensorlValue;   // message and sensor value concardination.
+  String message= WindmillID + messagetext + sensorValue;   // message and sensor value concardination.
   //mySerial.println("I am SMS from GSM Module");          // The SMS text you want to send
   mySerial.println(message);
   delay(100);
