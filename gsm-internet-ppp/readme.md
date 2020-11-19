@@ -9,3 +9,5 @@ PPP is the protocol used for establishing internet links over dial-up modems, DS
 
 # https://linux.die.net/man/8/pppd
 
+Link to follow for raspberrypi hat
+# https://www.instructables.com/PiAnyWhere-4G-LTE-Hat-for-the-Raspberry-Pi/
