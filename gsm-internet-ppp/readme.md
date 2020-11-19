@@ -11,3 +11,5 @@ PPP is the protocol used for establishing internet links over dial-up modems, DS
 
 Link to follow for raspberrypi hat
 # https://www.instructables.com/PiAnyWhere-4G-LTE-Hat-for-the-Raspberry-Pi/
+
+# https://github.com/Altitude-Tech/iotbit_Install
